@@ -29,6 +29,8 @@ public class TowerIconBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpH
         {
             Vector3 towerSpawnLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             towerSpawnLocation.z = 0;
+            towerSpawnLocation = alignmentGrid.GetCellCenterWorld(alignmentGrid.WorldToCell(towerSpawnLocation));
+
             Instantiate(towerPrefabToSpawn, towerSpawnLocation, Quaternion.identity);
 
             draggingTower = false;

@@ -3,28 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class EnemyBehavior : MonoBehaviour
+[RequireComponent(typeof(Collider2D))]
+public class BaseEnemyBehavior : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("Should be a GameObject with children where each child is a point that the enemy will travel to. " +
              "The enemy travels in straight lines to each point. The enemy will stop and do nothing once it reaches the last point.")]
     private GameObject travelPath;
     [SerializeField]
-    private float speed;
+    protected float speed;
     [SerializeField]
     private float maxHealth;
 
     private List<Transform> pathNodes;
-    private Vector3 nextDestination;
+    protected Vector3 nextDestination;
     private int nextDestinationIndex;
     private float currentHealth;
 
-    private const float CLOSE_ENOUGH = 0.1f;
+    protected const float CLOSE_ENOUGH = 0.2f;
 
     // Use this callback if something needs to know when this enemy died
-    public Action<EnemyBehavior> onEnemyDeathCallback;
+    public Action<BaseEnemyBehavior> onEnemyDeathCallback;
 
-    void Start()
+    protected virtual void Start()
     {
         /*pathNodes = new List<Transform>();
         foreach (Transform childTransform in travelPath.transform)
@@ -50,7 +51,7 @@ public class EnemyBehavior : MonoBehaviour
 
     }
 
-    void Update()
+    private void Update()
     {
         if ((transform.position - nextDestination).magnitude <= CLOSE_ENOUGH)
         {
@@ -61,6 +62,11 @@ public class EnemyBehavior : MonoBehaviour
             }
         }
 
+        MoveToNextNode();
+    }
+
+    protected virtual void MoveToNextNode()
+    {
         transform.position += Vector3.Normalize(nextDestination - transform.position) * speed * Time.deltaTime;
     }
 

@@ -27,6 +27,20 @@ public class BaseEnemyBehavior : MonoBehaviour
 
     protected virtual void Start()
     {
+        /*pathNodes = new List<Transform>();
+        foreach (Transform childTransform in travelPath.transform)
+        {
+            pathNodes.Add(childTransform);
+        }
+        nextDestination = pathNodes[0].position;
+        nextDestinationIndex = 0;*/
+        Setup();
+
+        currentHealth = maxHealth;
+    }
+
+    public void Setup()
+    {
         pathNodes = new List<Transform>();
         foreach (Transform childTransform in travelPath.transform)
         {
@@ -35,7 +49,6 @@ public class BaseEnemyBehavior : MonoBehaviour
         nextDestination = pathNodes[0].position;
         nextDestinationIndex = 0;
 
-        currentHealth = maxHealth;
     }
 
     private void Update()

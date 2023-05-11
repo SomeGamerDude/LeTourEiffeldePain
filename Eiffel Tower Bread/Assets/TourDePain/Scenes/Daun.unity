@@ -1066,7 +1066,7 @@ Transform:
   m_Children:
   - {fileID: 929743115}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &795084611
 GameObject:
@@ -2692,7 +2692,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6163670655593505760, guid: e973a2a62af731240b27a6e3547e9872, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6163670655593505760, guid: e973a2a62af731240b27a6e3547e9872, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2738,6 +2738,30 @@ PrefabInstance:
       propertyPath: travelPath
       value: 
       objectReference: {fileID: 1192122581}
+    - target: {fileID: 6163670655593505763, guid: e973a2a62af731240b27a6e3547e9872, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3d930d1527c4449f9b30b6d37dba222f, type: 3}
+    - target: {fileID: 6163670655593505763, guid: e973a2a62af731240b27a6e3547e9872, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163670655593505763, guid: e973a2a62af731240b27a6e3547e9872, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163670655593505763, guid: e973a2a62af731240b27a6e3547e9872, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163670655593505763, guid: e973a2a62af731240b27a6e3547e9872, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163670655593505763, guid: e973a2a62af731240b27a6e3547e9872, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6163670655593505773, guid: e973a2a62af731240b27a6e3547e9872, type: 3}
       propertyPath: m_Name
       value: Enemy

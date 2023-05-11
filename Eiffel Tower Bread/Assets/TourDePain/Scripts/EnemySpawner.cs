@@ -47,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
             if (totalEnemies1 > 0)
             {
                 GameObject clone1 = Instantiate(enemyPrefab1);
-                EnemyBehavior enemy1 = clone1.GetComponent<EnemyBehavior>();
+                BaseEnemyBehavior enemy1 = clone1.GetComponent<BaseEnemyBehavior>();
                 enemy1.Setup();
                 totalEnemies1--;
                 totalEnemies--;
@@ -56,7 +56,7 @@ public class EnemySpawner : MonoBehaviour
             else if (totalEnemies2 > 0)
             {
                 GameObject clone2 = Instantiate(enemyPrefab2);
-                EnemyBehavior enemy2 = clone2.GetComponent<EnemyBehavior>();
+                BaseEnemyBehavior enemy2 = clone2.GetComponent<BaseEnemyBehavior>();
                 enemy2.Setup();
                 totalEnemies2--;
                 totalEnemies--;
@@ -65,7 +65,7 @@ public class EnemySpawner : MonoBehaviour
             else if (totalEnemies3 > 0)
             {
                 GameObject clone3 = Instantiate(enemyPrefab3);
-                EnemyBehavior enemy3 = clone3.GetComponent<EnemyBehavior>();
+                BaseEnemyBehavior enemy3 = clone3.GetComponent<BaseEnemyBehavior>();
                 enemy3.Setup();
                 totalEnemies3--;
                 totalEnemies--;

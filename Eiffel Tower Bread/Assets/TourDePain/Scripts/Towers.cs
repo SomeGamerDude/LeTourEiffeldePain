@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Towers : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject ProjectileSpawner;
+
     private Transform targetPos;
     public float range = 10f;
     public string enemyTag = "Enemy";
@@ -20,6 +23,10 @@ public class Towers : MonoBehaviour
         if (targetPos == null)
         {
             return;
+        }
+        else
+        {
+            LockOnToEnemy();
         }
     }
 
@@ -52,6 +59,13 @@ public class Towers : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    private void LockOnToEnemy()
+    {
+        Vector3 towerRotation = targetPos.transform.position - transform.position;
+        float rotationAngle = Vector3.SignedAngle(transform.up, towerRotation, transform.forward);
+        transform.Rotate(0f, 0f, rotationAngle);
     }
 
 }

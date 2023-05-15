@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8290511372528371957}
   - component: {fileID: 8290511372528371958}
-  - component: {fileID: 8290511372528371959}
+  - component: {fileID: 3208753826164142600}
   - component: {fileID: 8290511372528371960}
   m_Layer: 0
   m_Name: Teleporting Enemy
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.7184118, g: 0.2254657, b: 0.754717, a: 1}
+  m_Sprite: {fileID: 21300000, guid: a0bb0a5205d1d4672a5bd9a6ce2f2c11, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,8 +86,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &8290511372528371959
-PolygonCollider2D:
+--- !u!61 &3208753826164142600
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,24 +99,19 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.03250408, y: 0.0056529045}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8828125}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.25, y: 0.43359375}
-      - {x: -0.5, y: 0}
-      - {x: -0.25, y: -0.43359375}
-      - {x: 0.25, y: -0.43359375}
-      - {x: 0.5, y: 0}
-      - {x: 0.25, y: 0.43359375}
+  serializedVersion: 2
+  m_Size: {x: 0.5562515, y: 0.94912434}
+  m_EdgeRadius: 0
 --- !u!114 &8290511372528371960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,4 +127,4 @@ MonoBehaviour:
   travelPath: {fileID: 0}
   speed: 4
   maxHealth: 10
-  teleportCooldownSeconds: 3
+  teleportCooldownSeconds: 1.35

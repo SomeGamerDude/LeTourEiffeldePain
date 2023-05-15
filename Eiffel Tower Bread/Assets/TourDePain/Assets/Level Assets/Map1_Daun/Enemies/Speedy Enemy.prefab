@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5110128193349310473}
   m_Layer: 0
   m_Name: Speedy Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,8 @@ MonoBehaviour:
   travelPath: {fileID: 5441697179947822262, guid: c6dd5a446cadb834ca3bf4766105b751, type: 3}
   speed: 4
   maxHealth: 7
+  currentHealth: 10
+  enemyValue: 10
 --- !u!70 &5110128193349310473
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

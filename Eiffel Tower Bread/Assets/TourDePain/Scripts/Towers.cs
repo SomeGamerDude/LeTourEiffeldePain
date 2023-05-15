@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class Towers : MonoBehaviour
 {
+    [Header("Projectile Info")]
     [SerializeField]
-    private GameObject ProjectileSpawner;
+    private GameObject bulletPrefab;
+    [SerializeField]
+    private Transform firePoint;
 
+    [Header("Enemy Info")]
+    [SerializeField]
     private Transform targetPos;
-    public float range = 10f;
     public string enemyTag = "Enemy";
+
+    [Header("Tower Attributes")]
+    [SerializeField]
+    private float range = 10f;
+    [SerializeField]
+    private float rateOfFire = 1f;
+    [SerializeField]
+    private float fireCooldown = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +40,14 @@ public class Towers : MonoBehaviour
         {
             LockOnToEnemy();
         }
+
+        if (fireCooldown <= 0)
+        {
+            ShootTarget();
+            fireCooldown = 1f / rateOfFire;
+        }
+
+        fireCooldown -= Time.deltaTime;
     }
 
     void FindEnemyTarget()
@@ -66,6 +86,17 @@ public class Towers : MonoBehaviour
         Vector3 towerRotation = targetPos.transform.position - transform.position;
         float rotationAngle = Vector3.SignedAngle(transform.up, towerRotation, transform.forward);
         transform.Rotate(0f, 0f, rotationAngle);
+    }
+
+    protected virtual void ShootTarget()
+    {
+        GameObject bulletFired = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Projectile projShot = bulletFired.GetComponent<Projectile>();
+
+        if (projShot != null)
+        {
+            projShot.Seek(targetPos);
+        }
     }
 
 }

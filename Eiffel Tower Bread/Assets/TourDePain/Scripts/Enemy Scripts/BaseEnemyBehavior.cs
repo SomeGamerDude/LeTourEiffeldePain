@@ -18,7 +18,8 @@ public class BaseEnemyBehavior : MonoBehaviour
     private List<Transform> pathNodes;
     protected Vector3 nextDestination;
     private int nextDestinationIndex;
-    private float currentHealth;
+    public float currentHealth = 10f;
+    public int enemyValue = 10;
 
     protected const float CLOSE_ENOUGH = 0.2f;
 
@@ -76,7 +77,13 @@ public class BaseEnemyBehavior : MonoBehaviour
         if (currentHealth <= 0)
         {
             if (onEnemyDeathCallback != null) onEnemyDeathCallback(this);
-            Destroy(gameObject);
+            OnDeath();
         }
+    }
+
+    void OnDeath()
+    {
+        Debug.Log("Earned $" + enemyValue + "!");
+        Destroy(gameObject);
     }
 }

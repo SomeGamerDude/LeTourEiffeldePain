@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6183830423022787339}
   m_Layer: 0
   m_Name: Teleporting Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,4 +132,6 @@ MonoBehaviour:
   travelPath: {fileID: 5441697179947822262, guid: c6dd5a446cadb834ca3bf4766105b751, type: 3}
   speed: 4
   maxHealth: 10
+  currentHealth: 10
+  enemyValue: 10
   teleportCooldownSeconds: 3

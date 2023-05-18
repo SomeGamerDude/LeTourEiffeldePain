@@ -16,7 +16,7 @@ Build/
 Builds/
 Logs/
 Bin/
-/[Uu]ser[Ss]ettings/
+[Uu]ser[Ss]ettings/
 
 # erroneous meta files 
 library.meta

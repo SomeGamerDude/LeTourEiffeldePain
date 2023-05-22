@@ -35,7 +35,8 @@ public class BaseEnemyBehavior : MonoBehaviour
         }
         nextDestination = pathNodes[0].position;
         nextDestinationIndex = 0;*/
-        Setup();
+        if (pathNodes != null)
+            Setup();
 
         currentHealth = maxHealth;
     }
@@ -79,6 +80,12 @@ public class BaseEnemyBehavior : MonoBehaviour
             if (onEnemyDeathCallback != null) onEnemyDeathCallback(this);
             OnDeath();
         }
+    }
+
+    public void SetTravelPath(GameObject newPath)
+    {
+        travelPath = newPath;
+        Setup();
     }
 
     void OnDeath()

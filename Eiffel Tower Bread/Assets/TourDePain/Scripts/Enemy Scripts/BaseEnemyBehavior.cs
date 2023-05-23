@@ -18,7 +18,7 @@ public class BaseEnemyBehavior : MonoBehaviour
     private List<Transform> pathNodes;
     protected Vector3 nextDestination;
     private int nextDestinationIndex;
-    public float currentHealth = 10f;
+    private float currentHealth = 10f;
     public int enemyValue = 10;
 
     protected const float CLOSE_ENOUGH = 0.2f;
@@ -35,7 +35,7 @@ public class BaseEnemyBehavior : MonoBehaviour
         }
         nextDestination = pathNodes[0].position;
         nextDestinationIndex = 0;*/
-        if (pathNodes != null)
+        if (travelPath != null)
             Setup();
 
         currentHealth = maxHealth;

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2855454845774974330}
   - component: {fileID: 6163670655593505762}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy (deprecated)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,3 +129,5 @@ MonoBehaviour:
   travelPath: {fileID: 0}
   speed: 6
   maxHealth: 10
+  currentHealth: 10
+  enemyValue: 10

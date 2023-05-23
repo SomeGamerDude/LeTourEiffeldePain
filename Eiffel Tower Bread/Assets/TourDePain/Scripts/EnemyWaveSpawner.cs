@@ -23,11 +23,8 @@ public class EnemyWaveSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(startDelay);
 
-                                                                  print("Starting waves");
-
         for(; currentWave < enemyWaves.Length; currentWave++)
         {
-                                                                   print("Starting wave: " + currentWave);
             foreach (BaseEnemyBehavior enemy in enemyWaves[currentWave].enemies)
             {
                 BaseEnemyBehavior newEnemy = Instantiate(enemy, transform.position, Quaternion.identity);

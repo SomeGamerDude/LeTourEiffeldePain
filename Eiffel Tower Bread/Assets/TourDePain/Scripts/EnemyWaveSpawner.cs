@@ -27,6 +27,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         {
             foreach (BaseEnemyBehavior enemy in enemyWaves[currentWave].enemies)
             {
+                Debug.Log(transform.position.ToString());
                 BaseEnemyBehavior newEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
                 newEnemy.SetTravelPath(travelPath);
                 yield return new WaitForSeconds(enemyWaves[currentWave].individualSpawnDelay);

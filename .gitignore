@@ -16,6 +16,8 @@ Build/
 Builds/
 Logs/
 Bin/
+/[Uu]ser[Ss]ettings/
+Eiffel Tower Bread/[Uu]ser[Ss]ettings/
 
 # erroneous meta files 
 library.meta

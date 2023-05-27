@@ -18,7 +18,7 @@ public class BaseEnemyBehavior : MonoBehaviour
     private List<Transform> pathNodes;
     protected Vector3 nextDestination;
     private int nextDestinationIndex;
-    public float currentHealth = 10f;
+    private float currentHealth = 10f;
     public int enemyValue = 10;
 
     protected const float CLOSE_ENOUGH = 0.2f;
@@ -35,7 +35,8 @@ public class BaseEnemyBehavior : MonoBehaviour
         }
         nextDestination = pathNodes[0].position;
         nextDestinationIndex = 0;*/
-        Setup();
+        if (travelPath != null)
+            Setup();
 
         currentHealth = maxHealth;
     }
@@ -79,6 +80,12 @@ public class BaseEnemyBehavior : MonoBehaviour
             if (onEnemyDeathCallback != null) onEnemyDeathCallback(this);
             OnDeath();
         }
+    }
+
+    public void SetTravelPath(GameObject newPath)
+    {
+        travelPath = newPath;
+        Setup();
     }
 
     void OnDeath()

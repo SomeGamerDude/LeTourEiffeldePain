@@ -18,42 +18,18 @@ public class TowerIconBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpH
 
     private bool draggingTower = false;
 
-    private Ray ray;
-    private RaycastHit hit;
-
-
-
     public void OnPointerDown(PointerEventData eventData)
     {
         draggingTower = true;
-
     }
-    
+
     public void OnPointerUp(PointerEventData eventData)
     {
-        
         if (draggingTower)
         {
-            
             Vector3 towerSpawnLocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             towerSpawnLocation.z = 0;
             towerSpawnLocation = alignmentGrid.GetCellCenterWorld(alignmentGrid.WorldToCell(towerSpawnLocation));
-
-            /* 
-             * Try to compare the tag "TowerTile" to instantiate the tower.
-             * but it didn't work.
-             * 
-             * 
-            ray = Camera.main.ScreenPointToRay(towerSpawnLocation);
-
-            if(Physics.Raycast(ray, out hit, Mathf.Infinity))
-            {
-                
-                if (hit.transform.CompareTag("TowerTile"))
-                {
-                    Instantiate(towerPrefabToSpawn, towerSpawnLocation, Quaternion.identity);
-                }
-            }*/
 
             Instantiate(towerPrefabToSpawn, towerSpawnLocation, Quaternion.identity);
 
